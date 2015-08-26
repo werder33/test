@@ -10,16 +10,16 @@ use App\Http\Controllers\Controller;
 class BaseController extends Controller
 {
   
-public function index(){
-	
-	return view('templates.index')->with('name');
+public function getIndex($id='index'){
+
+	return view('templates.index')->with('id',$id);
 }
-public function project(){
+public function getProject(){
 	
 	return view('templates.project')->with('name');
 }
-public function contact(){
-	
+public function getContact(){
+	echo '2';
 	return view('templates.contact')->with('name');
 }
 }

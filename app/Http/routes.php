@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-get('/', ['as' => 'posts', 'uses' => 'PostController@index' ]);
-Route ::get('/','BaseController@index');
-Route ::get('/index','BaseController@index');
-Route ::get('/project','BaseController@project');
-Route ::get('/contact','BaseController@contact');
+
+Route::controller('base', 'BaseController');
+Route::get('/{id?}','BaseController@getIndex');
