@@ -5,12 +5,11 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href='{{asset('/index')}}'>Главная</a></li>
+                <li class="active"><a href='{{asset('/')}}'>Главная</a></li>
                 <li><a href='{{asset('/about')}}'>О нас</a></li>
-                <li><a href='{{asset('/service')}}'>Как купить</a></li>
-                <li class="dropdown">
-                    <a href='{{asset('/project')}}' class="dropdown-toggle" data-toggle="dropdown">Проекты <i class="icon-angle-down"></i></a>
-                    <ul class="dropdown-menu">
+                <li><a href='{{asset('/buy')}}'>Как купить</a></li>
+                <li><a href='{{asset('/project')}}'>Проекты</a>
+                   <!-- <ul class="dropdown-menu">
                         <li><a href={}>Кирпич</a></li>
                         <li><a href="project.html">блоки</a></li>
                         <li><a href="project.html">гараж</a></li>
@@ -18,9 +17,9 @@
                         <li><a href="project.html">подвал</a></li>
                         <li><a href="project.htmll">баня</a></li>
                         <li><a href="project.html">не баня</a></li>
-                    </ul>
+                    </ul>-->
                 </li>
-                <li><a href="contact-us.html">контакты</a></li>
+                <li><a href='{{asset('/contact')}}'>контакты</a></li>
             </ul>
         </div>
     </div>

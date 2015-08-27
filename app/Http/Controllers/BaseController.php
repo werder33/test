@@ -6,20 +6,20 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use DB;
 
 class BaseController extends Controller
 {
   
-public function getIndex($id='index'){
+public function getIndex(){
 
-	return view('templates.index')->with('id',$id);
+	return view('templates.index');
 }
-public function getProject(){
-	
-	return view('templates.project')->with('name');
+
+public function getStatic($id='about'){
+	$text=DB::table('static_contents')->where('url','=',$id)->first();
+	return view('templates.static')->with('text',$text);
 }
-public function getContact(){
-	echo '2';
-	return view('templates.contact')->with('name');
-}
+
+
 }

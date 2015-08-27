@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,36 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
-        // $this->call(UserTableSeeder::class);
-        $this->call(PostsSeeder::class);
-
-        Model::reguard();
-    }
-}
-
-class PostsSeeder extends Seeder{
-    public function run()
-    {
-        DB::table ('posts') -> delete();
-        Post::create([
-                'title' => 'contactre',
-                'url' => 'contact',
-                'content' => 'jjjk',
-            ]
-        );
-        Post::create([
-                'title' => 'users',
-                'url' => 'user',
-                'content' => 'fdfs sss ggfsgvs',
-            ]
-        );
-        Post::create([
-                'title' => 'helper',
-                'url' => 'help',
-                'content' => 'dfvfdbfd',
-            ]
-        );
+        DB::table('static_contents')->insert([
+           'title' => str_random(10),
+            'body' => str_random(100),
+            'url' => str_random(10),
+        ]);
     }
 }

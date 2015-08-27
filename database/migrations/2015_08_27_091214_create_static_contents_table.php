@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration
+class CreateStaticContentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('static_contents', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable();
-            $table->string('url')->unique();
-            $table->text('content')->nullable();
-
+            $table->string('title');
+            $table->text('body');
+            $table->string('url');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('posts');
+        Schema::drop('static_contents');
     }
 }

@@ -16,5 +16,6 @@ Route::get('/', function () {
 });
 */
 
-Route::controller('base', 'BaseController');
-Route::get('/{id?}','BaseController@getIndex');
+Route::controllers(['project'=>'ProjectController']);
+Route::get('/{id}', 'BaseController@getStatic');
+Route::get('/','BaseController@getIndex');

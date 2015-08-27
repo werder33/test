@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="carousel-content centered">
-                                    <h1 class="animation animated-item-1">{{$id}}²</h1>
+                                    <h1 class="animation animated-item-1">mnbmb²</h1>
                                     <p class="animation animated-item-2">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
                                 </div>
                             </div>
