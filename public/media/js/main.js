@@ -59,3 +59,7 @@ jQuery(function($) {
 		social_tools: false
 	});	
 });
+function changeimg(imgSrc){
+		document.getElementById("base_image").src = imgSrc;
+		document.getElementById("image_url").href = imgSrc;
+}

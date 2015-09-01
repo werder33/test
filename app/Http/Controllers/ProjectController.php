@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Filtr;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Models\Project;
+use App\Models\Page;
+
+use DB;
 
 class ProjectController extends Controller
 {
@@ -16,8 +20,25 @@ class ProjectController extends Controller
      */
     public function getIndex()
     {
-        return view('templates.project');
+
+
+        //  $id = DB::table('projects')->select('id')->get();
+
+        //   $result = Filtr::whereHas('role', function ($q)
+        // {
+        //  return $q->whereIn('id',[1,2]);
+        //  })->select('name')->get();
+
+        //    return $result;}
+
+        $projects = DB::table('projects')->select('title', 'img')->get();
+
+        // return view('templates.project')->with('projects', $projects);
+
+
+        return View('templates.project')->with(array('projects' => $projects));
+        //  'filtrs'=>$filtrs));
+
+
     }
-
-
 }

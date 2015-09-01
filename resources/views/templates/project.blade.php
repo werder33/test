@@ -15,71 +15,33 @@
             </div>
         </div>
     </section><!--/#title-->
-
     <section id="portfolio" class="container">
         <ul class="portfolio-filter">
             <li><a class="btn btn-default active" href="#" data-filter="*">все</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".bootstrap">1 этаж</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".html">2 этажа</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".wordpress">дача</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".1level">Одноэтажные дома</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".2level">Двухэтажные дома</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".garage">Дома с гаражом</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".terrace">Дома с террасой</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".mansard">Дома с мансардой</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".wood">Деревянные дома</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".silicate">Дома из газосиликатных блоков</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".block">Дома из пеноблоков</a></li>
+            <li><a class="btn btn-default" href="#" data-filter=".carcass">каркасные дома</a></li>
         </ul><!--/#portfolio-filter-->
 
         <ul class="portfolio-items col-3">
-            <li class="portfolio-item apps">
-                <div class="item-inner">
-                    <img src="media/images/popular/dom.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="media/images/popular/dom.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
+@foreach($projects as $project)
+                <li class="portfolio-item  1level ">
+                    <div class="item-inner">
+                        <img src="{{$project->img}}" alt="">
+                        <h5>{{$project->title}}</h5>
+                        <div class="overlay">
+                            <a class="preview btn btn-danger" href="{{$project->img}}" rel="prettyPhoto" title="{{$project->title}}">Увеличить</a>
+                            <a class="preview btn btn-danger" href="/page">подробнее</a>
+                        </div>
                     </div>
-                </div>
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item joomla bootstrap">
-                <div class="item-inner">
-                    <img src="media/images/popular/dom2.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="media/images/popular/dom2.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
-                    </div>
-                </div>
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item bootstrap wordpress">
-                <div class="item-inner">
-                    <img src="media/images/popular/dom3.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="media/images/popular/dom3.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
-                    </div>
-                </div>
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item joomla wordpress apps">
-                <div class="item-inner">
-                    <img src="media/images/popular/dom4.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="media/images/popular/dom4.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
-                    </div>
-                </div>
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item joomla html">
-                <div class="item-inner">
-                    <img src="media/images/popular/dom5.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="media/images/popular/dom5.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
-                    </div>
-                </div>
-            </li><!--/.portfolio-item-->
-            <li class="portfolio-item wordpress html">
-                <div class="item-inner">
-                    <img src="media/images/popular/3d.jpg" alt="">
-                    <h5>Lorem ipsum dolor sit amet</h5>
-                    <div class="overlay">
-                        <a class="preview btn btn-danger" href="media/images/popular/3d.jpg" rel="prettyPhoto"><i class="icon-eye-open"></i></a>
-                    </div>
-                </div>
-            </li><!--/.portfolio-item-->
-        </ul>
-    </section><!--/#portfolio-->
-
-@endsection
+                </li><!--/.portfolio-item-->
+@endforeach
+    </ul>
+    </section>
+@stop

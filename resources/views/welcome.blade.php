@@ -12,13 +12,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @section('style')
-        <link rel="stylesheet" href="media/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="media/css/prettyPhoto.css" />
-        <link rel="stylesheet" href="media/css/fonts.css" />
-        <link rel="stylesheet" href="media/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="media/css/animate.css">
-        <link rel="stylesheet" href="media/css/main.css" />
-        <link rel="stylesheet" href="media/css/media.css" />
+        <link rel="stylesheet" href="{{asset('media/css/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" href="{{asset('media/css/prettyPhoto.css')}}"/>
+        <link rel="stylesheet" href="{{asset('media/css/fonts.css')}}"/>
+        <link rel="stylesheet" href="{{asset('media/css/font-awesome.min.css')}}"/>
+        <link rel="stylesheet" href="{{asset('media/css/animate.css')}}"/>
+        <link rel="stylesheet" href="{{asset('media/css/main.css')}}"/>
+        <link rel="stylesheet" href="{{asset('media/css/media.css')}}"/>
     @show
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -27,6 +27,8 @@
 </head>
 <body>
 @include('templates.header')
+
+
 @yield('content')
 @include('templates.footer')
 <!--[if lt IE 9]>

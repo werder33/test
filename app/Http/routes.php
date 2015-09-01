@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-
-Route::controllers(['project'=>'ProjectController']);
+Route::get('/test','MainController@getIndex');
+Route::controllers(['project'=>'ProjectController',
+                    'page'=>'PageController']);
 Route::get('/{id}', 'BaseController@getStatic');
 Route::get('/','BaseController@getIndex');
