@@ -10,7 +10,9 @@ use DB;
 
 class BaseController extends Controller
 {
-  
+  public  function __construct(){
+	  parent::__construct();
+  }
 public function getIndex(){
 
 	return view('templates.index');

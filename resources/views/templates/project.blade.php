@@ -16,27 +16,25 @@
         </div>
     </section><!--/#title-->
     <section id="portfolio" class="container">
-        <ul class="portfolio-filter">
-            <li><a class="btn btn-default active" href="#" data-filter="*">все</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".1level">Одноэтажные дома</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".2level">Двухэтажные дома</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".garage">Дома с гаражом</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".terrace">Дома с террасой</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".mansard">Дома с мансардой</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".wood">Деревянные дома</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".silicate">Дома из газосиликатных блоков</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".block">Дома из пеноблоков</a></li>
-            <li><a class="btn btn-default" href="#" data-filter=".carcass">каркасные дома</a></li>
-        </ul><!--/#portfolio-filter-->
+        <form class ='form-group' method="POST" action="{{asset('project/index')}}">
+            {!! csrf_field() !!}
+            <input type="text" name="level" placeholder="этажность"/>
+            <input type="text" name="wall" placeholder="стены"/>
+            <input type="text" name="size" placeholder="площадь"/>
+            <input type="text" name="garage" placeholder="гараж"/>
+            <input type="text" name="fundament" placeholder="фундамент"/>
+            <input type="text" name="room" placeholder="количество комнат"/>
+            <input type="submit" name="search" value="поиск" />
+        </form>
 
         <ul class="portfolio-items col-3">
 @foreach($projects as $project)
                 <li class="portfolio-item  1level ">
                     <div class="item-inner">
-                        <img src="{{$project->img}}" alt="">
+                        <img src="media/images/project/{{$project->img}}" alt="">
                         <h5>{{$project->title}}</h5>
                         <div class="overlay">
-                            <a class="preview btn btn-danger" href="{{$project->img}}" rel="prettyPhoto" title="{{$project->title}}">Увеличить</a>
+                            <a class="preview btn btn-danger" href="media/images/project/{{$project->img}}" rel="prettyPhoto" title="{{$project->title}}">Увеличить</a>
                             <a class="preview btn btn-danger" href="/page">подробнее</a>
                         </div>
                     </div>

@@ -24,9 +24,11 @@ class PageController extends Controller
                                     ->join('projects','pages.project_id','=','projects.id')
                                     ->first();
         $pages = DB::table('pages')->select('images')->get();
-       // return view('templates.page')->with('projects',$projects);
-        return view('templates.page')->with(['pages'=>$pages,
-                                               'projects'=>$projects]);
+
+        return view('templates.page')->with(['projects'=>$projects,
+                                          'pages'=>$pages
+                                               ]);
+
     }
 
 }

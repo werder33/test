@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    <h2>{{$projects -> title}}</h2>
+                    <h2>{{$projects->title}}</h2>
                     <p>{{$projects->opisanie}}</p>
                 </div>
                 <div class="col-sm-6">
@@ -27,7 +27,7 @@
                 <div class="col-sm-6">
                     <div class="project">
                         <div class="leftbox">
-                            <div id="MainImage" class="centeredContent" style="margin: 0; margin-bottom: 10px;"><img src="{{$projects->img}}" border="0" width="400" height="350" id="base_image" /><br />
+                            <div id="MainImage" class="centeredContent" style="margin: 0; margin-bottom: 10px;"><img src="media/images/project/{{$projects->img}}" border="0" width="400" height="350" id="base_image" /><br />
                                 <div id="NextImage">
                                     @foreach($pages as $page)
                                         <div class="NextImage  centeredContent back"><img src="{{$page->images}}" border="0" width="88px" height="88px" onclick="changeimg(this.src)" /></div>
