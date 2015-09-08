@@ -20,15 +20,14 @@ class PageController extends Controller
      */
     public function getIndex()
     {
-        $projects =DB::table('pages')
-                                    ->join('projects','pages.project_id','=','projects.id')
-                                    ->first();
-        $pages = DB::table('pages')->select('images')->get();
 
-        return view('templates.page')->with(['projects'=>$projects,
-                                          'pages'=>$pages
-                                               ]);
-
+           // $projects = Project::with('pages')->where('id','=',$_GET['id'])->get();
+        $projects = DB::table('projects') -> where('id','=',$_GET['id']) -> get();
+        $pages = DB::table('pages') -> where('project_id','=',$_GET['id'])->get();
+        //return $cat[0]['pages'][0]->images;
+       return view('templates.page')->with(['projects'=>$projects,'pages' => $pages]);
+       // dd($projects);
+        //print_r($projects[0]['pages'][0]);
     }
 
 }

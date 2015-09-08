@@ -12,13 +12,10 @@ class Project extends Model
     protected  $fillable = ['level','wall', 'size', 'garage','fundament','room'];
     public function pages()
     {
-        return $this->hasMany('App\Models\Page','project_id');
+        return $this->hasMany('App\Models\Page');
     }
 
-    public function roles()
-    {
-        return $this->belongsToMany('App\Models\Filtr');
-    }
+
 
 
 }

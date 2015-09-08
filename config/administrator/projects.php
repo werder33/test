@@ -31,10 +31,10 @@ return array(
         'socle',
         'finishing',
         'footer',
-        'garage'=>['type'=>'enum','options' => array('yes', 'no')],
+        'garage'=>['type'=>'enum','options' => array('есть', 'нет')],
         'level',
-        'mansard'=>['type'=>'enum','options' => array('yes', 'no')],
-        'sauna'=>['type'=>'enum','options' => array('yes', 'no')],
+        'mansard'=>['type'=>'enum','options' => array('есть', 'нет')],
+        'sauna'=>['type'=>'enum','options' => array('есть', 'нет')],
 
     )
 

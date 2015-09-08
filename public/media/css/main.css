@@ -373,6 +373,21 @@ img {
 	}
 .zakaz{
 	margin-top: 25px;}
+.filtr{
+    width: 180px;
+    margin: 10px;
+}
+.filtr-form{
+    padding: 15px;
+    background-color: #eee;
+    margin: 20px;
+}
+#filter{
+
+}
+#showFilter{
+    margin: 10px;
+}
 
 
 

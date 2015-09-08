@@ -2,6 +2,7 @@
 @section('scrips')
 @parent
     <script src="{{asset('media/js/jquery.isotope.min.js')}}"></script>
+
  @stop
 @section('content')
     <section id="title" class="emerald">
@@ -16,16 +17,53 @@
         </div>
     </section><!--/#title-->
     <section id="portfolio" class="container">
-        <form class ='form-group' method="POST" action="{{asset('project/index')}}">
+         <button class="btn btn-danger" id="showFilter">Отобразить \ скрыть фильтр</button>
+        <div id="filter">
+           <form class ='form-inline filtr-form' method="POST" action="{{asset('project/index')}}">
             {!! csrf_field() !!}
-            <input type="text" name="level" placeholder="этажность"/>
-            <input type="text" name="wall" placeholder="стены"/>
-            <input type="text" name="size" placeholder="площадь"/>
-            <input type="text" name="garage" placeholder="гараж"/>
-            <input type="text" name="fundament" placeholder="фундамент"/>
-            <input type="text" name="room" placeholder="количество комнат"/>
-            <input type="submit" name="search" value="поиск" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>Площадь м<sup>2</sup>:</label></br>
+                           <label>от <input  type="text" name="size1"></label></br>
+                           <label>до <input  type="text" name="size2"></label></br>
+
+                    </div>
+                    <div class="col-sm-4">
+           <label>Количество этажей:</label><select class="form-control filtr" name="level">
+                   <option>1</option>
+                   <option>2</option>
+                   <option>3</option>
+               </select>
+            <label>Количество комнат:</label> <select class="form-control filtr" name="room">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                    </div>
+                    <div class="col-sm-4">
+            <label>Гараж:</label><select class="form-control filtr" name="garage">
+                <option> </option>
+                <option>есть</option>
+                <option>нет</option>
+
+             </select>
+            <label>Сауна\баня:</label><select class="form-control filtr" name="sauna">
+                    <option> </option>
+                    <option>есть</option>
+                    <option>нет</option>
+
+                </select>
+
+            <input class="btn btn-danger" type ="submit" name="search" value="Применить фильтр" />
+                    </div>
+                </div>
+            </div>
         </form>
+     </div>
+
 
         <ul class="portfolio-items col-3">
 @foreach($projects as $project)
@@ -35,7 +73,7 @@
                         <h5>{{$project->title}}</h5>
                         <div class="overlay">
                             <a class="preview btn btn-danger" href="media/images/project/{{$project->img}}" rel="prettyPhoto" title="{{$project->title}}">Увеличить</a>
-                            <a class="preview btn btn-danger" href="/page">подробнее</a>
+                            <a class="preview btn btn-danger" href="/page?id={{$project->id}}">подробнее</a>
                         </div>
                     </div>
                 </li><!--/.portfolio-item-->

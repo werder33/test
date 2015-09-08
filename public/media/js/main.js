@@ -57,7 +57,14 @@ jQuery(function($) {
 	//Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
-	});	
+	});
+	$('#filter').hide();
+	$('#showFilter').click(function(){
+		$('#filter').toggleClass('opened').toggleClass('closed').slideToggle();
+
+	});
+
+
 });
 function changeimg(imgSrc){
 		document.getElementById("base_image").src = imgSrc;

@@ -14,7 +14,7 @@ class Page extends Model
 
     public function project()
     {
-        return $this->belongsTo('App\Models\Project','project_id');
+        return $this->belongsTo('App\Models\Project');
     }
 
 

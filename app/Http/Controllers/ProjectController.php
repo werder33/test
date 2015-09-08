@@ -33,7 +33,7 @@ class ProjectController extends Controller
         //    return $result;}
 
 
-        $projects = DB::table('projects')->select('title', 'img')->get();
+        $projects = DB::table('projects')->select('title', 'img', 'id')->get();
 
          return view('templates.project')->with('projects', $projects);
 
@@ -49,8 +49,17 @@ class ProjectController extends Controller
     {
 
       //Project::create($filtr->all());
-      //  return redirect('/');
-        $filtr->input('level');
+    //    return redirect('/');
+        //$filtr->input('level');
+        $projects = DB::table('projects')->whereBetween('size',array($filtr['size1'],$filtr['size2']))
+                                        ->where('level','=',$filtr['level'])
+                                        ->where('room','=',$filtr['room'])
+                                        ->where('garage','=',$filtr['garage'])
+                                        ->where('sauna','=',$filtr['sauna'])->get();
+
+        return View('templates.project')->with(array('projects' => $projects));
+
+
 
     }
 }
