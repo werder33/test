@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
+use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -64,8 +64,8 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
-    public function getRegister()
-    {
-       return redirect('auth/login');
-    }
+   // public function getRegister()
+   // {
+     // return redirect('auth/login');
+   // }
 }

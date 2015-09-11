@@ -11,16 +11,18 @@
 |*/
 
 
-Route::group(['namespace' => 'admin'], function() {
-
-        $this -> middleware('auth',[]);
 
 
-});
+
+Route:: group(['middleware' =>'auth'], function(){
+                Route::controllers(['/cabinet' => 'CabinetController']);
+} );
+
+
 Route::controllers(['project'=>'ProjectController',
                     'page'=>'PageController',
                     'test'=>'MainController',
-
-                        'auth'=>'Auth\AuthController']);
+                    'auth'=>'Auth\AuthController']);
+Route::get('/news','BaseController@getNews');
 Route::get('/{id}', 'BaseController@getStatic');
 Route::get('/','BaseController@getIndex');

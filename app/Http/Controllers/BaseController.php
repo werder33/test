@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\StaticContent;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
@@ -23,5 +23,8 @@ public function getStatic($id='about'){
 	return view('templates.static')->with('text',$text);
 }
 
-
+public function getNews(){
+	$news = StaticContent::paginate(2);
+	return View('templates.test')->with('news',$news);
+}
 }
