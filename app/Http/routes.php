@@ -12,7 +12,7 @@
 
 
 
-
+Route::get('test' , 'TestController@index');
 
 Route:: group(['middleware' =>'auth'], function(){
                 Route::controllers(['/cabinet' => 'CabinetController']);
@@ -21,7 +21,7 @@ Route:: group(['middleware' =>'auth'], function(){
 
 Route::controllers(['project'=>'ProjectController',
                     'page'=>'PageController',
-                    'test'=>'MainController',
+                    //'test'=>'MainController',
                     'auth'=>'Auth\AuthController']);
 Route::get('/news','BaseController@getNews');
 Route::get('/{id}', 'BaseController@getStatic');
